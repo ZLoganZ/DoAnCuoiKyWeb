@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/curvesapi-1.06.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.14.1.jar"/>
+	<classpathentry kind="lib" path="lib/poi-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-examples-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-javadoc-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-full-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-lite-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-5.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.32.jar"/>
+	<classpathentry kind="lib" path="lib/SparseBitSet-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/xmlbeans-5.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/mssql-jdbc-9.4.1.jre11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate2.5.7">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="owner.project.facets" value="jpt.jpa"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
