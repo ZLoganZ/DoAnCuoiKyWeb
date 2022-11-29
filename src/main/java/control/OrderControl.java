@@ -39,7 +39,7 @@ public class OrderControl extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
-		HttpSession session = request.getSession();
+			HttpSession session = request.getSession();
 	        Account a = (Account) session.getAttribute("acc");
 	        if(a == null) {
 	        	response.sendRedirect("login");
@@ -155,23 +155,25 @@ public class OrderControl extends HttpServlet {
 				email.setFrom("vandatdinh2@gmail.com"); //chinh lai email quan tri tai day [chu y dung email con hoat dong]
 				email.setFromPassword("abrclpizcdzhfpva"); //mat khau email tren
 				email.setTo(emailAddress);
-				email.setSubject("Dat hang thanh cong tu Shoes Family");
+				email.setSubject("Order successfully from King Shoes!");
 				StringBuilder sb = new StringBuilder();
 				sb.append("Dear ").append(name).append("<br>");
-				sb.append("Ban vua dat dang tu Shoes Family. <br> ");
-				sb.append("Dia chi nhan hang cua ban la: <b>").append(deliveryAddress).append(" </b> <br>");
-				sb.append("So dien thoai khi nhan hang cua ban la: <b>").append(phoneNumber).append(" </b> <br>");
-				sb.append("Cac san pham ban dat la: <br>");
+				sb.append("You have just placed an order from King Shoes. <br> ");
+				sb.append("Your delivery address is: <b>").append(deliveryAddress).append(" </b> <br>");
+				sb.append("Your pick-up phone number is: <b>").append(phoneNumber).append(" </b> <br>");
+				sb.append("The products you ordered are: <br>");
 				for(Cart c : list) {
 					for(Product p : list2) {
 						if(c.getProductID()==p.getId()) {
-							sb.append(p.getName()).append(" | ").append("Price:").append(p.getPrice()).append("$").append(" | ").append("Amount:").append(c.getAmount()).append(" | ").append("Size:").append(c.getSize()).append("<br>");
+							sb.append(p.getName()).append(" | ").append("Price: ").append(p.getPrice()).append("$").append(" | ").append("Amount: ").append(c.getAmount()).append(" | ").append("Size: ").append(c.getSize()).append("<br>");
 						}
 					}
 				}
-				sb.append("Tong Tien: ").append(String.format("%.02f",totalMoneyVAT)).append("$").append("<br>");
-				sb.append("Cam on ban da dat hang tai Shoes Family<br>");
-				sb.append("Chu cua hang");
+				sb.append("Vat: <b>10%</b> <br>");
+				sb.append("Total Money: <b>").append(String.format("%.02f",totalMoneyVAT)).append("$").append("</b> <br>");
+				sb.append("Thank you for ordering at King Shoes!<br>");
+				sb.append("Store owner <br>");
+				sb.append("<b>LoganZ</b>");
 				
 				email.setContent(sb.toString());
 				EmailUtils.send(email);
