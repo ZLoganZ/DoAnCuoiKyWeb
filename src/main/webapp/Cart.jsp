@@ -38,25 +38,25 @@
 				</c:if>
                                                 <tr>
                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="p-2 px-3 text-uppercase">Sản Phẩm</div>
+                                                        <div class="p-2 px-3 text-uppercase">Product</div>
                                                     </th>
                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Đơn Giá</div>
+                                                        <div class="py-2 text-uppercase">Price</div>
                                                     </th>
                                                      <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Màu Sắc</div>
+                                                        <div class="py-2 text-uppercase">Color</div>
                                                     </th>
                                                      <th scope="col" class="border-0 bg-light">
                                                         <div class="py-2 text-uppercase">Delivery</div>
                                                     </th>
                                                      <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Kích Thước</div>
+                                                        <div class="py-2 text-uppercase">Size</div>
                                                     </th>
                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Số Lượng</div>
+                                                        <div class="py-2 text-uppercase">Quantity</div>
                                                     </th>
                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Xóa</div>
+                                                        <div class="py-2 text-uppercase">Delete</div>
                                                     </th>
                                                 </tr>
                                             </thead>

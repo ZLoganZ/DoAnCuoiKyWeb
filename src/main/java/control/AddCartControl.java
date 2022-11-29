@@ -54,12 +54,12 @@ public class AddCartControl extends HttpServlet {
         if(cartExisted != null) {
         	 amountExisted = cartExisted.getAmount();
         	 dao.editAmountAndSizeCart(accountID,productID, (amountExisted+amount), size);
-        	 request.setAttribute("mess", "Da tang so luong san pham!");
+        	 request.setAttribute("mess", "The number of products has increased!");
         	 request.getRequestDispatcher("managerCart").forward(request, response);
         }
         else {
         	  dao.insertCart(accountID, productID, amount, size);
-        	  request.setAttribute("mess", "Da them san pham vao gio hang!");
+        	  request.setAttribute("mess", "Product added to cart!");
         	  request.getRequestDispatcher("managerCart").forward(request, response);
         }
       

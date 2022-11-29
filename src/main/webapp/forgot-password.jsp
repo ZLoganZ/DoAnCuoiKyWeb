@@ -28,21 +28,64 @@
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
-<link href="css/login.css" rel="stylesheet" type="text/css" />
+    <style><%@include file="/css/fpass.css"%></style>
+    <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/bootstrap.min.css">
 <title>Forgot Password Form</title>
 </head>
 <body>
 <jsp:include page="Menu.jsp"></jsp:include>
-<div id="logreg-forms">
-            <form class="form-signin" action="forgotPassword" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Forgot Password</h1>
-                <p class="text-success">${mess}</p>
-                <p class="text-danger">${error}</p>
-                <label for="username">Username</label>
-                <input name="username" type="text" id="username" class="form-control" placeholder="Username" required="" autofocus="">
-                <label for="email">Email</label>
-                <input name="email" type="text" id="email" class="form-control" placeholder="Email" required="" autofocus="">
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Retrieve</button> 
+<div class="box">
+            <form action="forgotPassword" method="post">
+                <h2>Forgot password</h2>
+                <c:if test="${mess!=null }">
+                    <style>
+                        .box {
+                            height: 480px !important;
+                        }
+                        .box::before{
+                            height: 480px !important;
+                        }
+                        .box::after{
+                            height: 480px !important;
+                        }
+                        .inputBox{
+                            margin-top: 20px !important;
+                        }
+                    </style>
+                    <p class="alert alert-success" style="margin-top:10px !important;">${mess}</p>
+                </c:if>
+                <c:if test="${error!=null }">
+                    <style>
+                        .box {
+                            height: 450px !important;
+                        }
+                        .box::before{
+                            height: 450px !important;
+                        }
+                        .box::after{
+                            height: 450px !important;
+                        }
+                        .inputBox{
+                            margin-top: 20px !important;
+                        }
+                    </style>
+                    <p class="alert alert-danger" style="margin-top:10px !important;">${error}</p>
+                </c:if>
+                <div class="inputBox">
+                    <input name="username" type="text" required="required">
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input name="email" type="email" required="required">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="login"><i class="fas fa-angle-left"></i> Back to Sign in</a>
+                    <a href="signup">Create a new account</a>
+                </div>
+                <input type="submit" value="Retrieve">
             </form>
              
 </div>

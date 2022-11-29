@@ -25,9 +25,21 @@ import entity.TongChiTieuBanHang;
  */
 @WebServlet(name = "OrderControl", urlPatterns = {"/order"})
 public class OrderControl extends HttpServlet {
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 HttpSession session = request.getSession();
+
+
+	/**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+		HttpSession session = request.getSession();
 	        Account a = (Account) session.getAttribute("acc");
 	        if(a == null) {
 	        	response.sendRedirect("login");
@@ -37,6 +49,12 @@ public class OrderControl extends HttpServlet {
 	        DAO dao = new DAO();
 	        List<Cart> list = dao.getCartByAccountID(accountID);
 	        List<Product> list2 = dao.getAllProduct();
+			if(list.size()==0) {
+				request.setAttribute("error", "There are no products in the cart!");
+        		request.getRequestDispatcher("managerCart").forward(request, response);
+				return;
+			}
+			request.getRequestDispatcher("DatHang.jsp").forward(request, response);
 	        double totalMoney=0;
 	        for(Cart c : list) {
 				for(Product p : list2) {
@@ -46,7 +64,7 @@ public class OrderControl extends HttpServlet {
 				}
 			}
 	        double totalMoneyVAT=totalMoney+totalMoney*0.1;
-	        
+
 	        double tongTienBanHangThem=0;
 	        int sell_ID;
 	        for(Cart c : list) {
@@ -91,15 +109,20 @@ public class OrderControl extends HttpServlet {
 	        }
 	        
 	        
-		request.getRequestDispatcher("DatHang.jsp").forward(request, response);
+		
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
+			response.setContentType("text/html;charset=UTF-8");
+        	request.setCharacterEncoding("UTF-8");
 			String emailAddress = request.getParameter("email");
 			String name = request.getParameter("name");
 			String phoneNumber = request.getParameter("phoneNumber");
@@ -152,22 +175,23 @@ public class OrderControl extends HttpServlet {
 				
 				email.setContent(sb.toString());
 				EmailUtils.send(email);
-				request.setAttribute("mess", "Dat hang thanh cong!");
+				request.setAttribute("mess", "Order successfully!");
 				
 				dao.deleteCartByAccountID(accountID);
 				
-				
+				request.getRequestDispatcher("managerCart").forward(request, response);
 				//new code
 //				request.setAttribute("email", emailAddress);
 //				request.getRequestDispatcher("ThongTinDatHang.jsp").forward(request, response);
 				
 			
 		} catch (Exception e) {
-			request.setAttribute("error", "Dat hang that bai!");
+			response.setContentType("text/html;charset=UTF-8");
+        	request.setCharacterEncoding("UTF-8");
+			request.setAttribute("error", "Order failed!");
 			e.printStackTrace();
+			request.getRequestDispatcher("managerCart").forward(request, response);
 		}
-	
-		request.getRequestDispatcher("DatHang.jsp").forward(request, response);
 	}
 
 }

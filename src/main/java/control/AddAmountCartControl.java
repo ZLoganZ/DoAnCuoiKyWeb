@@ -43,11 +43,17 @@ public class AddAmountCartControl extends HttpServlet {
         int accountID = a.getId();
         int productID = Integer.parseInt(request.getParameter("productID"));
         int amount = Integer.parseInt(request.getParameter("amount"));
-        amount+=1;
-        DAO dao = new DAO();
-        dao.editAmountCart(accountID, productID, amount);
-        request.setAttribute("mess", "Da tang so luong!");
-        request.getRequestDispatcher("managerCart").forward(request, response);
+        if(amount == 10) {
+        	request.setAttribute("mess", "The maximum number of products is 10!");
+        	request.getRequestDispatcher("managerCart").forward(request, response);
+        }
+        else {
+        	amount+=1;
+            DAO dao = new DAO();
+            dao.editAmountCart(accountID, productID, amount);
+            request.setAttribute("mess", "The number of products has been increased!");
+            request.getRequestDispatcher("managerCart").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

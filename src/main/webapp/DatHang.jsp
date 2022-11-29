@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -7,19 +8,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <style><%@include file="/css/order.css"%></style>
+        <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/bootstrap.min.css">
         <title>Order</title>
     </head>
     <body>
     	<jsp:include page="Menu.jsp"></jsp:include>
-        <div id="logreg-forms">
-            <form class="form-signin" action="order" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Order</h1>
+        <div class="box">
+            <form action="order" method="post">
+                <h2>Order</h2>
                 <c:if test="${error!=null }">
                  <div class="alert alert-danger" role="alert">
 						 ${error}
@@ -30,16 +32,39 @@
 				  	${mess}
 				</div>
 				</c:if>
-                <label for="name">Name</label>
-                <input name="name" type="text" id="name" class="form-control" placeholder="Name" required="" autofocus="">
-                 <label for="phoneNumber">Phone number</label>
-                <input name="phoneNumber" type="text" id="phoneNumber" class="form-control" placeholder="Phone number" required="" autofocus="">
-                <label for="email">Email</label>
-                <input name="email" type="text" id="email" class="form-control" placeholder="email" required="" autofocus="">
-                <label for="deliveryAddress">Delivery Address</label>
-                <input name="deliveryAddress" type="text" id="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" autofocus="">
-               
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-american-sign-language-interpreting"></i>Dat Hang</button>
+                <div class="inputBox">
+                    <input name="name" type="text"required="required">
+                    <span>
+                        Your name
+                    </span>
+                    <i></i>
+                </div>
+                
+                <div class="inputBox">
+                    <input name="phoneNumber" type="text" required="required">
+                    <span>
+                        Phone number
+                    </span>
+                    <i></i>
+                </div>
+                
+                <div class="inputBox">
+                    <input name="email" type="email" required="required">
+                    <span>
+                        Email
+                    </span>
+                    <i></i>
+                </div>
+                
+                <div class="inputBox">
+                    <input name="deliveryAddress" type="text" required="required">
+                    <span>
+                        Delivery address
+                    </span>
+                    <i></i>
+                </div>
+
+                <input type="submit" value="Order">
                 
             </form>
 

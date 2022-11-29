@@ -5,32 +5,33 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!------ Include the above in your HEAD tag ------>
-       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/> 
          
          <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" /> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" /> 
     <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+        <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="https://use.fontawesome.com/releases/vVERSION/js/all.js" data-auto-replace-svg="nest"></script>
       <!-- Roboto Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap"> 
   
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   
-  <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/bootstrap.min.css">
   
-  <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb-pro.min.css">
+        <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb-pro.min.css">
   
-  <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb.ecommerce.min.css"> 
+        <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb.ecommerce.min.css"> 
   <!-- Your custom styles (optional) -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
      
@@ -46,12 +47,14 @@
       .carousel-item:nth-child(1) {
         background-image: url('https://i.pinimg.com/originals/fa/45/96/fa4596ad9a9d39901eeb455ed4f74e44.jpg');
         background-repeat: no-repeat;
+        background-size: 100% 100%;
         background-position: center center;
       }
 
       .carousel-item:nth-child(2) {
         background-image: url('https://i.pinimg.com/originals/d0/b6/5c/d0b65c5c53657f897af6862c44d8a5e2.jpg');
         background-repeat: no-repeat;
+        background-size : 100% 100%;
         background-position: center center;
       }
 
@@ -81,7 +84,7 @@
         
         
  <!-- Carousel wrapper -->
-    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel" style="margin-top:76px !important;">
+    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel" style="margin-top:0px !important;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
@@ -133,7 +136,7 @@
             
               
              <div class="row" style="background: linear-gradient(45deg, #ff216d, #2196f3); padding: 20px;border-radius: 20px !important; ">            
-				<h1 style="text-align:center; width:100%; color: red !important;" id="moiNhat">SẢN PHẨM MỚI NHẤT</h1>
+				<h1 style="text-align:center; width:100%; color: rgb(0, 0, 0) !important;" id="moiNhat">Latest Product</h1>
                     <div class="col-sm-12" style = "text-align: center;">
                         <div id="contentMoiNhat" class="row">
                         <c:forEach items="${list8Last}" var="o">
@@ -156,7 +159,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                  <button onclick="loadMoreNew()" class="btn btn-primary">Xem thêm</button>
+                  <button onclick="loadMoreNew()" class="btn btn-primary">More <i class="fas fa-angle-double-right"></i></button>
                 </div>
 
             </div>
@@ -186,7 +189,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                   <button onclick="loadMoreNike()" class="btn btn-primary">Xem thêm</button>
+                   <button onclick="loadMoreNike()" class="btn btn-primary">More <i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
             
@@ -196,7 +199,7 @@
                     <div class="col-sm-12" style = "text-align: center;">
                         <div id="contentAdidas" class="row">
                         <c:forEach items="${list4AdidasLast}" var="o">
-                            <div class="productAdidas col-12 col-md-6 col-lg-3" style="margin-bottom: 10px !important;">
+                            <div class="productAdidas col-12 col-md-6 col-lg-3" style="margin-bottom: 20px !important;">
                                 <div class="card">
                                 <div class="view zoom z-depth-2 rounded">
                                     <img class="img-fluid w-100" src="${o.image}" style="cursor: pointer;" alt="Card image cap">
@@ -215,7 +218,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                   <button onclick="loadMoreAdidas()" class="btn btn-primary">Xem thêm</button>
+                   <button onclick="loadMoreAdidas()" class="btn btn-primary">More <i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
             

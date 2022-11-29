@@ -15,7 +15,7 @@ body {
 .box {
   position: relative;
   width: 380px;
-  height: 420px;
+  height: 700px;
   background: #f5f5f5;
   border-radius: 8px;
   overflow: hidden;
@@ -27,7 +27,7 @@ body {
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 700px;
   transform-origin: bottom right;
   background: linear-gradient(0deg, transparent, #001aff, #001aff);
   animation: animate 6s linear infinite;
@@ -39,7 +39,7 @@ body {
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 700px;
   transform-origin: bottom right;
   background: linear-gradient(0deg, transparent, #001aff, #001aff);
   animation: animate 6s linear infinite;
@@ -142,7 +142,7 @@ body {
   justify-content: space-between;
 }
 .links a {
-  margin: 10px 0;
+  margin: 20px 0;
   font-size: 0.9em;
   color: #000000;
   text-decoration: beige;
@@ -154,7 +154,7 @@ body {
 .box input[type="submit"] {
   border: none;
   outline: none;
-  padding: 11px 25px;
+  padding: 11px 26px 11px 23px;
   background: #00aeff;
   cursor: pointer;
   border-radius: 4px;

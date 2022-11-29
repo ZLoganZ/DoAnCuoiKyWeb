@@ -42,11 +42,20 @@ public class SubAmountCartControl extends HttpServlet {
         int accountID = a.getId();
         int productID = Integer.parseInt(request.getParameter("productID"));
         int amount = Integer.parseInt(request.getParameter("amount"));
-        amount-=1;
-        DAO dao = new DAO();
-        dao.editAmountCart(accountID, productID, amount);
-        request.setAttribute("mess", "Da giam so luong!");
-        request.getRequestDispatcher("managerCart").forward(request, response);
+        if(amount == 1) {
+        	DAO dao = new DAO();
+        	dao.deleteProductCart(accountID, productID);
+            request.setAttribute("mess", "Product removed from cart!");
+        	request.getRequestDispatcher("managerCart").forward(request, response);
+        }
+        else {
+        	amount-=1;
+            DAO dao = new DAO();
+            dao.editAmountCart(accountID, productID, amount);
+            request.setAttribute("mess", "The number of products has been reduced!");
+            request.getRequestDispatcher("managerCart").forward(request, response);
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -1095,12 +1095,12 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(rs.getInt(1),
-                        rs.getString(2),
+                        rs.getString(2).trim(),
                         rs.getString(3),
-                        rs.getString(4),
+                        rs.getString(4).trim(),
                         rs.getInt(5),
                         rs.getInt(6),
-                		rs.getString(7));
+                		rs.getString(7).trim());
             }
         } catch (Exception e) {
         }
@@ -1586,6 +1586,18 @@ public class DAO {
             ps.setInt(1, amount);
             ps.setInt(2, accountID);
             ps.setInt(3, productID);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void deleteProductCart(int accountID, int productID) {
+        String query = "delete from Cart where [accountID]=? and [productID]=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, accountID);
+            ps.setInt(2, productID);
             ps.executeUpdate();
         } catch (Exception e) {
         }
